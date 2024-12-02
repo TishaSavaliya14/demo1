@@ -27,6 +27,28 @@ function App() {
       .then((d) => console.log(d.data))
       .catch((err) => console.log(err));
   }
+
+  function handledelelete(id) {
+    axios
+      .delete(`https://jsonplaceholder.typicode.com/todos/${id}`)
+      .then((d) => {
+        console.log(d.data);
+        alert("delete successfully");
+      })
+      .catch((err) => console.log(err));
+  }
+
+  function handleupdate(id) {
+    axios
+      .put(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+        title: inputdata.title,
+      })
+      .then((d) => {
+        console.log(d.data);
+        alert("Todo updated successfully!");
+      })
+      .catch((err) => console.log(err));
+  }
   return (
     <div className="App">
       <input
@@ -43,6 +65,8 @@ function App() {
         return (
           <>
             <p>{i.title}</p>
+            <button onClick={() => handleupdate(i.id)}>update</button>
+            <button onClick={() => handledelelete(i.id)}>delete</button>
           </>
         );
       })}
