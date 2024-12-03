@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Home() {
+function Home(props) {
   //   const shoot = () => {
   //     alert("great shoot");
   //   };
@@ -14,16 +14,26 @@ function Home() {
   const handlesubmit = (value, e) => {
     e.preventDefault();
     console.log(value);
-    setinputvalue(" "); 
+    setinputvalue(" ");
+  };
+
+  const [count, setcount] = useState(0);
+
+  const increment = () => {
+    setcount(count + 1);
+  };
+  const decrement = () => {
+    setcount(count - 1);
   };
   return (
     <>
       <div>Home</div>
+      {/* <h4>{props.date}</h4> */}
       {/* <button onClick={shoot}>click me</button> */}
       {/* <button onClick={() => shoot("goal")}>click me</button> */}
       <button onClick={(event) => shoot("goal", event)}>click me</button>
-
       <form onSubmit={(e) => handlesubmit(inputvalue, e)}>
+        <h4> {Date()}</h4>
         <input
           type="text"
           placeholder="enter name"
@@ -32,6 +42,9 @@ function Home() {
         />
         <button>click</button>
       </form>
+      <h5>{count}</h5>
+      <button onClick={increment}>+</button>
+      <button onClick={decrement}>-</button> <br></br>
     </>
   );
 }

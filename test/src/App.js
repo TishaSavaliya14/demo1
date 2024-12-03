@@ -52,7 +52,7 @@ function App() {
   }
   return (
     <div className="App">
-      <Home/>
+      <Home date={Date()} />
       <input
         type="text"
         name="title"
