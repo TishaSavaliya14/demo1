@@ -45,8 +45,10 @@ function Home(props) {
         <button>click</button>
       </form>
       <h5>{count}</h5>
-      <button onClick={increment}>+</button>
-      <button onClick={decrement}>-</button> <br></br>
+      <button onClick={increment}>increment</button>
+      <button onClick={decrement}>decrement</button>
+      <br />
+      <br />
     </>
   );
 }
