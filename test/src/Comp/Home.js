@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Class from "./Class";
 
 function Home(props) {
   //   const shoot = () => {
@@ -27,6 +28,7 @@ function Home(props) {
   };
   return (
     <>
+      <Class />
       <div>Home</div>
       {/* <h4>{props.date}</h4> */}
       {/* <button onClick={shoot}>click me</button> */}
