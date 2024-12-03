@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import Home from "./Comp/Home";
 function App() {
   const [data, setdata] = useState([]);
   const [inputdata, setinputdata] = useState({
@@ -51,6 +52,7 @@ function App() {
   }
   return (
     <div className="App">
+      <Home/>
       <input
         type="text"
         name="title"
